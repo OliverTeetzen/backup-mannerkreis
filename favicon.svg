@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <radialGradient id="flameGrad" cx="50%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#FF6B1A"/>
+      <stop offset="45%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#8B0000"/>
+    </radialGradient>
+    <radialGradient id="coreGrad" cx="50%" cy="90%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Outer flame -->
+  <path d="M16 2 C16 2 10 8 9 13 C8 16 9 18 9 18 C7 15 7 11 9 8 C6 11 5 15 6 19 C7 23 10 26 12 27.5 C11 25 11 22 13 20 C13 23 14 25 16 27 C18 25 19 23 19 20 C21 22 21 25 20 27.5 C22 26 25 23 26 19 C27 15 26 11 23 8 C25 11 25 15 23 18 C23 18 24 16 23 13 C22 8 16 2 16 2Z" fill="url(#flameGrad)"/>
+  <!-- Inner core glow -->
+  <path d="M16 10 C16 10 13 14 12.5 17 C12 19 13 21 14 22 C14 20 14.5 18.5 16 17.5 C17.5 18.5 18 20 18 22 C19 21 20 19 19.5 17 C19 14 16 10 16 10Z" fill="url(#coreGrad)"/>
+</svg>

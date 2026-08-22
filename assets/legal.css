@@ -1,0 +1,127 @@
+/* ---------------------------------------------------------------------------
+   Styling für die Rechtsseiten (Impressum, Datenschutzerklärung).
+   Übernimmt Palette und Typografie der Startseite.
+--------------------------------------------------------------------------- */
+:root {
+  --mk-bg:      oklch(0.10 0 0);
+  --mk-surface: oklch(0.16 0 0);
+  --mk-text:    oklch(0.90 0.01 65);
+  --mk-muted:   oklch(0.60 0.01 65);
+  --mk-accent:  oklch(0.55 0.22 25);
+  --mk-accent-strong: oklch(0.44 0.19 25);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--mk-bg);
+  color: var(--mk-text);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.legal-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.1rem 2rem;
+  background: rgba(13, 13, 13, 0.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(192, 57, 43, 0.18);
+}
+.legal-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+.legal-brand span { color: var(--mk-accent); }
+.legal-back {
+  color: var(--mk-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.legal-back:hover { color: var(--mk-accent); }
+
+.legal-main { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 5rem; }
+
+.legal-main h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+.legal-rule { width: 55px; height: 3px; background: var(--mk-accent-strong); margin: 0 0 2.5rem; }
+
+.legal-main h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin: 2.8rem 0 0.9rem;
+}
+.legal-main h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: white;
+  margin: 1.8rem 0 0.5rem;
+}
+.legal-main p, .legal-main li { color: var(--mk-muted); }
+.legal-main ul { padding-left: 1.2rem; }
+.legal-main li { margin-bottom: 0.4rem; }
+.legal-main a { color: var(--mk-accent); text-decoration: underline; }
+
+.legal-card {
+  background: var(--mk-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  margin: 1.2rem 0;
+}
+.legal-card p { margin: 0.3rem 0; }
+
+/* Deutlich sichtbare Markierung für Angaben, die noch fehlen. */
+.todo {
+  display: inline-block;
+  background: rgba(192, 57, 43, 0.16);
+  border: 1px dashed rgba(192, 57, 43, 0.55);
+  border-radius: 4px;
+  padding: 0.05rem 0.45rem;
+  color: var(--mk-accent);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.legal-note {
+  background: rgba(192, 57, 43, 0.09);
+  border-left: 4px solid var(--mk-accent-strong);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.legal-note p { margin: 0; color: var(--mk-text); font-size: 0.93rem; }
+
+.legal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  font-size: 0.83rem;
+  color: var(--mk-muted);
+}
+.legal-footer a { color: var(--mk-muted); text-decoration: none; margin: 0 0.7rem; transition: color 0.3s; }
+.legal-footer a:hover { color: var(--mk-accent); }

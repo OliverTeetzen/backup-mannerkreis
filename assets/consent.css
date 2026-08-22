@@ -1,0 +1,128 @@
+/* ---------------------------------------------------------------------------
+   Cookie-/Einwilligungsbanner
+   Gestaltung im CI der Seite. „Ablehnen" ist bewusst genauso prominent wie
+   „Akzeptieren" – ungleich gewichtete Buttons gelten als Dark Pattern und
+   machen die Einwilligung unwirksam (DSGVO Art. 4 Nr. 11, Art. 7).
+--------------------------------------------------------------------------- */
+
+.consent-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2000;
+  max-width: 640px;
+  margin: 0 auto;
+  background: oklch(0.16 0 0);
+  border: 1px solid rgba(192, 57, 43, 0.28);
+  border-radius: 14px;
+  padding: 1.6rem 1.7rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  font-family: 'Inter', sans-serif;
+  color: oklch(0.9 0.01 65);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s, transform 0.35s;
+}
+.consent-banner[hidden] { display: none; }
+.consent-banner.is-visible { opacity: 1; transform: translateY(0); }
+
+.consent-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem;
+}
+.consent-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: oklch(0.6 0.01 65);
+  margin: 0 0 1.2rem;
+}
+.consent-text a { color: oklch(0.55 0.22 25); text-decoration: underline; }
+
+.consent-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.consent-btn {
+  flex: 1 1 160px;
+  padding: 0.8rem 1.4rem;
+  border-radius: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.consent-btn-accept {
+  background: oklch(0.44 0.19 25);
+  color: white;
+  border: 2px solid oklch(0.44 0.19 25);
+}
+.consent-btn-accept:hover {
+  background: oklch(0.55 0.22 25);
+  border-color: oklch(0.55 0.22 25);
+}
+.consent-btn-reject {
+  background: transparent;
+  color: oklch(0.9 0.01 65);
+  border: 2px solid rgba(232, 224, 213, 0.35);
+}
+.consent-btn-reject:hover {
+  border-color: oklch(0.9 0.01 65);
+  background: rgba(232, 224, 213, 0.07);
+}
+
+/* --- Aufklappbare Details --- */
+.consent-details {
+  margin-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 1rem;
+}
+.consent-details summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: oklch(0.6 0.01 65);
+  list-style: none;
+  transition: color 0.3s;
+}
+.consent-details summary::-webkit-details-marker { display: none; }
+.consent-details summary::after { content: ' +'; }
+.consent-details[open] summary::after { content: ' –'; }
+.consent-details summary:hover { color: oklch(0.55 0.22 25); }
+
+.consent-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.consent-category input { margin-top: 0.25rem; accent-color: oklch(0.44 0.19 25); }
+.consent-category input:disabled { opacity: 0.55; }
+.consent-category strong { display: block; color: white; font-weight: 600; }
+.consent-category span { color: oklch(0.6 0.01 65); }
+
+/* --- Footer-Button zum Widerruf, sieht aus wie ein Footer-Link --- */
+.consent-reopen {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.83rem;
+  color: oklch(0.6 0.01 65);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.consent-reopen:hover { color: oklch(0.55 0.22 25); }
+
+@media (max-width: 520px) {
+  .consent-banner { padding: 1.3rem 1.2rem; }
+  .consent-btn { flex: 1 1 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent-banner { transition: none; }
+}

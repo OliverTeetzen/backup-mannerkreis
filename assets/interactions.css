@@ -1,0 +1,78 @@
+/* ---------------------------------------------------------------------------
+   Männerkreis Vestenbergsgreuth – Interaktions-Styles
+   Im Original (React) waren diese Zustände als onMouseEnter/onFocus-Handler
+   direkt am Element gesetzt. Hier als CSS. Die !important-Angaben sind nötig,
+   weil die Grundwerte als inline-style am Element stehen.
+--------------------------------------------------------------------------- */
+
+/* --- Navigation --- */
+.nav-link:hover      { color: oklch(0.55 0.22 25) !important; }
+.btn-nav-cta:hover   { background: oklch(0.55 0.22 25) !important; }
+
+/* --- Buttons --- */
+.btn-primary:hover {
+  background: oklch(0.55 0.22 25) !important;
+  border-color: oklch(0.55 0.22 25) !important;
+}
+.btn-ghost:hover {
+  border-color: oklch(0.9 0.01 65) !important;
+  background: rgba(232, 224, 213, 0.07) !important;
+}
+.btn-submit { cursor: pointer; }
+.btn-submit:hover {
+  background: oklch(0.55 0.22 25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(192, 57, 43, 0.4);
+}
+.btn-sticky:hover {
+  background: oklch(0.55 0.22 25) !important;
+  transform: scale(1.05);
+}
+
+/* --- Karten --- */
+.card-sm:hover {
+  border-color: rgba(192, 57, 43, 0.35) !important;
+  transform: translateY(-4px);
+}
+.card-lg:hover {
+  border-color: rgba(192, 57, 43, 0.4) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Links in Kontaktblock und Footer --- */
+.contact-link:hover,
+.footer-link:hover { color: oklch(0.55 0.22 25) !important; }
+
+/* --- Formularfelder --- */
+.field { cursor: text; }
+select.field { cursor: pointer; }
+.field:focus { border-color: oklch(0.44 0.19 25) !important; }
+.field::placeholder { color: oklch(0.45 0.01 65); }
+
+/* --- FAQ-Akkordeon --- */
+.faq-toggle { cursor: pointer; }
+.faq-item.is-open { border-color: rgba(192, 57, 43, 0.4) !important; }
+.faq-item.is-open .faq-icon {
+  background: oklch(0.44 0.19 25) !important;
+  color: white !important;
+  transform: rotate(45deg) !important;
+}
+.faq-item.is-open .faq-panel { max-height: 300px !important; }
+
+/* --- Sticky-CTA unten rechts --- */
+#sticky-cta.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* --- Mobiles Menü --- */
+#mobile-menu.is-open { display: flex !important; }
+#menu-close { cursor: pointer; }
+.menu-btn { cursor: pointer; }
+
+/* --- Reduzierte Bewegung respektieren --- */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
